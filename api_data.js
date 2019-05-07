@@ -34,7 +34,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Attendance",
     "name": "GetEmployeenamesandid"
   },
@@ -109,9 +109,125 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Email",
     "name": "PostSendmail"
+  },
+  {
+    "type": "delete",
+    "url": "/deletePlayer",
+    "title": "deletes member from the futsal team",
+    "group": "Futsal",
+    "description": "<p>this api deletes from the futsal team</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    'success':'true',\n    'message':'Successfully deleted player Number 1'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response",
+          "content": "{\n    'success':'false',\n    'message':'Error deleting'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./documentationJSFiles/futsalDoc.js",
+    "groupTitle": "Futsal",
+    "name": "DeleteDeleteplayer"
+  },
+  {
+    "type": "get",
+    "url": "/readMember",
+    "title": "gets all team info",
+    "group": "Futsal",
+    "description": "<p>this api gets all team members info</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  'ss'='ss' \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response",
+          "content": "{\n    'success':'false',\n    'message':'Error in adding player to the team'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./documentationJSFiles/futsalDoc.js",
+    "groupTitle": "Futsal",
+    "name": "GetReadmember"
+  },
+  {
+    "type": "post",
+    "url": "/addMember",
+    "title": "adds member to the futsal team",
+    "group": "Futsal",
+    "description": "<p>this api addss member to the futsal team</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    'success':'true',\n    'message':'user name Successfully added to the team'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response",
+          "content": "{\n    'success':'false',\n    'message':'Error in adding player to the team'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./documentationJSFiles/futsalDoc.js",
+    "groupTitle": "Futsal",
+    "name": "PostAddmember"
+  },
+  {
+    "type": "put",
+    "url": "/addMember",
+    "title": "updates member to the futsal team",
+    "group": "Futsal",
+    "description": "<p>this api updates member to the futsal team</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    'success':'true',\n    'message':'user name Successfully updated to the team'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response",
+          "content": "{\n    'success':'false',\n    'message':'Error in updating player to the team'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./documentationJSFiles/futsalDoc.js",
+    "groupTitle": "Futsal",
+    "name": "PutAddmember"
   },
   {
     "type": "get",
@@ -148,7 +264,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Leave",
     "name": "GetPopulateleaverequestsYearMonth"
   },
@@ -217,7 +333,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Leave",
     "name": "PostCreateleaverequest"
   },
@@ -274,7 +390,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Leave",
     "name": "PutChangeleavestatus"
   },
@@ -313,7 +429,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Login",
     "name": "PostMocklogin"
   },
@@ -352,7 +468,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Notice",
     "name": "DeleteDeletenoticeId"
   },
@@ -391,7 +507,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Notice",
     "name": "GetReadnotice"
   },
@@ -448,7 +564,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Notice",
     "name": "PostCreatenotice"
   },
@@ -487,7 +603,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Reminder",
     "name": "DeleteDeletereminderId"
   },
@@ -526,7 +642,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Reminder",
     "name": "GetReadreminder"
   },
@@ -601,7 +717,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Reminder",
     "name": "PostCreatereminder"
   },
@@ -640,7 +756,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "Test",
     "name": "Get"
   },
@@ -679,48 +795,9 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "User",
     "name": "DeleteDeleteuserEmployeeid"
-  },
-  {
-    "type": "get",
-    "url": "/employeeNamesAndId/",
-    "title": "get all employee and id",
-    "group": "User",
-    "description": "<p>this api employee name and employee id</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n      \"employeeId\": 8,\n      \"fullName\": \"satyam khadka\"\n  }",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "SQL_Error",
-            "description": "<p>sql failure</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP 500 Internal Server Error",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "./documentation.js",
-    "groupTitle": "User",
-    "name": "GetEmployeenamesandid"
   },
   {
     "type": "get",
@@ -757,7 +834,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "User",
     "name": "GetGetdetailsforupdateEmployeeid"
   },
@@ -854,7 +931,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "User",
     "name": "GetUserprofile"
   },
@@ -893,7 +970,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "User",
     "name": "GetUserprofileEmployeeid"
   },
@@ -1112,7 +1189,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "User",
     "name": "PostCreateuser"
   },
@@ -1337,7 +1414,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./documentationJSFiles/documentation.js",
     "groupTitle": "User",
     "name": "PutUpdateuser"
   }
