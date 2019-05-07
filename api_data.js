@@ -39,6 +39,81 @@ define({ "api": [
     "name": "GetEmployeenamesandid"
   },
   {
+    "type": "post",
+    "url": "/sendMail",
+    "title": "Send Mail to employee on login",
+    "group": "Email",
+    "description": "<p>This api sends email</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "to",
+            "description": "<p>receivers email</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "subject",
+            "description": "<p>subject of mail</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of the recipiant</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "email",
+            "description": "<p>login email of the employee</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "password",
+            "description": "<p>login password of the user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQLError",
+            "description": "<p>sql failure</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 500 Internal Server Error",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./documentation.js",
+    "groupTitle": "Email",
+    "name": "PostSendmail"
+  },
+  {
     "type": "get",
     "url": "/populateLeaveRequests/:year/:month",
     "title": "Get Leave Request in a month",
@@ -204,6 +279,84 @@ define({ "api": [
     "name": "PutChangeleavestatus"
   },
   {
+    "type": "post",
+    "url": "/mockLogin",
+    "title": "Login",
+    "group": "Login",
+    "description": "<p>login</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   {\n\"success\": true,\n \"message\": \"Authentication successful!\",\n \"token\": \"eyJvU0k token token example\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "TokenError",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "   {\n\"success\": false,\n \"message\": \"Email or password does not match.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./documentation.js",
+    "groupTitle": "Login",
+    "name": "PostMocklogin"
+  },
+  {
+    "type": "delete",
+    "url": "/deleteNotice/:id",
+    "title": "Delete Notice",
+    "group": "Notice",
+    "description": "<p>This deletes notice by id</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQLError",
+            "description": "<p>sql failure</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 500 Internal Server Error",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./documentation.js",
+    "groupTitle": "Notice",
+    "name": "DeleteDeletenoticeId"
+  },
+  {
     "type": "get",
     "url": "/readNotice",
     "title": "Read Notice",
@@ -300,11 +453,11 @@ define({ "api": [
     "name": "PostCreatenotice"
   },
   {
-    "type": "put",
-    "url": "/deleteNotice/:id",
-    "title": "Delete Notice",
-    "group": "Notice",
-    "description": "<p>This deletes notice by id</p>",
+    "type": "delete",
+    "url": "/deleteReminder/:id",
+    "title": "Delete Reminder",
+    "group": "Reminder",
+    "description": "<p>This deletes reminder by id</p>",
     "success": {
       "examples": [
         {
@@ -335,8 +488,8 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "./documentation.js",
-    "groupTitle": "Notice",
-    "name": "PutDeletenoticeId"
+    "groupTitle": "Reminder",
+    "name": "DeleteDeletereminderId"
   },
   {
     "type": "get",
@@ -453,45 +606,6 @@ define({ "api": [
     "name": "PostCreatereminder"
   },
   {
-    "type": "put",
-    "url": "/deleteReminder/:id",
-    "title": "Delete Reminder",
-    "group": "Reminder",
-    "description": "<p>This deletes reminder by id</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP 200 OK",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "SQLError",
-            "description": "<p>sql failure</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP 500 Internal Server Error",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "./documentation.js",
-    "groupTitle": "Reminder",
-    "name": "PutDeletereminderId"
-  },
-  {
     "type": "get",
     "url": "/",
     "title": "test url",
@@ -531,7 +645,7 @@ define({ "api": [
     "name": "Get"
   },
   {
-    "type": "get",
+    "type": "delete",
     "url": "/deleteUser/:employeeId",
     "title": "Delete User",
     "group": "User",
@@ -567,77 +681,19 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "./documentation.js",
     "groupTitle": "User",
-    "name": "GetDeleteuserEmployeeid"
+    "name": "DeleteDeleteuserEmployeeid"
   },
   {
     "type": "get",
-    "url": "/getDataForPopup",
-    "title": "Get Data for Popup",
+    "url": "/employeeNamesAndId/",
+    "title": "get all employee and id",
     "group": "User",
-    "description": "<p>this api gives data for the popup section</p>",
+    "description": "<p>this api employee name and employee id</p>",
     "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "firstname",
-            "description": "<p>Firstname of the User.</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "employeeId",
-            "description": "<p>Employee's Id</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "fullName",
-            "description": "<p>FullName of the Employee</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "typeOfEmployee",
-            "description": "<p>Type Of Employee must be Intern Admin or Employee</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "department",
-            "description": "<p>Department of work</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "officialEmail",
-            "description": "<p>Self-Explanatory</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "joinDate",
-            "description": "<p>Joined date of employee Y-M-D format(default sql format)</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "MobileNumber",
-            "description": "<p>Self-Explanatory</p>"
-          },
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "endDate",
-            "description": "<p>End date of the Employee (if it exists employee no longer works for the company)</p>"
-          }
-        ]
-      },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   {\n\"employeeId\":165,\n\"fullName\":\"manisha\",\n\"typeOfEmployee\":\"owner\",\n\"department\":\"sdptfgdf\",\n\"officialEmail\":\"hghjhhfgh\",\n\"joinDate\":\"1999-10-20T18:15:00.000Z\",\n\"MobileNumber\":\"sataaf\",\n\"endDate\":\"1999-10-20T18:15:00.000Z\"\n     }",
+          "content": "{\n      \"employeeId\": 8,\n      \"fullName\": \"satyam khadka\"\n  }",
           "type": "json"
         }
       ]
@@ -664,7 +720,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "./documentation.js",
     "groupTitle": "User",
-    "name": "GetGetdataforpopup"
+    "name": "GetEmployeenamesandid"
   },
   {
     "type": "get",
@@ -676,7 +732,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n  \"password\": null,\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n      \"addressId\": 3,\n      \"street\": \"somewhere\",\n      \"city\": \"somewhere\",\n      \"province\": \"somewhere\",\n      \"country\": \"somewhere\",\n      \"zipCode\": \"55\",\n      \"addressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n     }",
+          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n      \"addressId\": 3,\n      \"street\": \"somewhere\",\n      \"city\": \"somewhere\",\n      \"province\": \"somewhere\",\n      \"country\": \"somewhere\",\n      \"zipCode\": \"55\",\n      \"addressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n     }",
           "type": "json"
         }
       ]
@@ -708,7 +764,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/userForAdminDashboard",
-    "title": "User For Admin Dashboard",
+    "title": "User Profile Full",
     "group": "User",
     "description": "<p>this api gives data for admin panel data includes employee details</p>",
     "success": {
@@ -773,7 +829,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   {\n\"employeeId\":165,\n\"fullName\":\"manisha\",\n\"typeOfEmployee\":\"owner\",\n\"department\":\"sdptfgdf\",\n\"officialEmail\":\"hghjhhfgh\",\n\"joinDate\":\"1999-10-20T18:15:00.000Z\",\n\"MobileNumber\":\"sataaf\",\n\"endDate\":\"1999-10-20T18:15:00.000Z\"\n     }",
+          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n      \"addressId\": 3,\n      \"street\": \"somewhere\",\n      \"city\": \"somewhere\",\n      \"province\": \"somewhere\",\n      \"country\": \"somewhere\",\n      \"zipCode\": \"55\",\n      \"addressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n     }",
           "type": "json"
         }
       ]
