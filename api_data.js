@@ -763,7 +763,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/userForAdminDashboard",
+    "url": "/userProfile",
     "title": "User Profile Full",
     "group": "User",
     "description": "<p>this api gives data for admin panel data includes employee details</p>",
@@ -856,7 +856,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "./documentation.js",
     "groupTitle": "User",
-    "name": "GetUserforadmindashboard"
+    "name": "GetUserprofile"
   },
   {
     "type": "post",
