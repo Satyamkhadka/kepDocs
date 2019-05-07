@@ -859,6 +859,45 @@
     "name": "GetUserprofile"
   },
   {
+    "type": "get",
+    "url": "/userProfile/:employeeId",
+    "title": "get employee detail by id",
+    "group": "User",
+    "description": "<p>this api gives data for showing user details by id</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n      \"addressId\": 3,\n      \"street\": \"somewhere\",\n      \"city\": \"somewhere\",\n      \"province\": \"somewhere\",\n      \"country\": \"somewhere\",\n      \"zipCode\": \"55\",\n      \"addressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n     }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQL_Error",
+            "description": "<p>sql failure</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 500 Internal Server Error",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./documentation.js",
+    "groupTitle": "User",
+    "name": "GetUserprofileEmployeeid"
+  },
+  {
     "type": "post",
     "url": "/createUser",
     "title": "Create User",
