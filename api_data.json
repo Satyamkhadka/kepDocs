@@ -34,9 +34,37 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Attendance",
     "name": "GetEmployeenamesandid"
+  },
+  {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "./doc/main.js",
+    "group": "E__Satyam_kip_api_docs_doc_main_js",
+    "groupTitle": "E__Satyam_kip_api_docs_doc_main_js",
+    "name": ""
   },
   {
     "type": "post",
@@ -109,7 +137,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Email",
     "name": "PostSendmail"
   },
@@ -138,7 +166,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/futsalDoc.js",
+    "filename": "./futsalDoc.js",
     "groupTitle": "Futsal",
     "name": "DeleteDeleteplayer"
   },
@@ -167,13 +195,13 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/futsalDoc.js",
+    "filename": "./futsalDoc.js",
     "groupTitle": "Futsal",
     "name": "GetReadmember"
   },
   {
     "type": "post",
-    "url": "/addMember",
+    "url": "/addEmployee",
     "title": "adds member to the futsal team",
     "group": "Futsal",
     "description": "<p>this api addss member to the futsal team</p>",
@@ -196,9 +224,9 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/futsalDoc.js",
+    "filename": "./futsalDoc.js",
     "groupTitle": "Futsal",
-    "name": "PostAddmember"
+    "name": "PostAddemployee"
   },
   {
     "type": "put",
@@ -225,7 +253,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/futsalDoc.js",
+    "filename": "./futsalDoc.js",
     "groupTitle": "Futsal",
     "name": "PutAddmember"
   },
@@ -264,7 +292,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Leave",
     "name": "GetPopulateleaverequestsYearMonth"
   },
@@ -333,7 +361,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Leave",
     "name": "PostCreateleaverequest"
   },
@@ -390,7 +418,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Leave",
     "name": "PutChangeleavestatus"
   },
@@ -429,7 +457,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Login",
     "name": "PostMocklogin"
   },
@@ -468,7 +496,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Notice",
     "name": "DeleteDeletenoticeId"
   },
@@ -507,7 +535,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Notice",
     "name": "GetReadnotice"
   },
@@ -564,7 +592,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Notice",
     "name": "PostCreatenotice"
   },
@@ -603,7 +631,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Reminder",
     "name": "DeleteDeletereminderId"
   },
@@ -642,7 +670,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Reminder",
     "name": "GetReadreminder"
   },
@@ -717,7 +745,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Reminder",
     "name": "PostCreatereminder"
   },
@@ -756,14 +784,14 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "Test",
     "name": "Get"
   },
   {
     "type": "delete",
-    "url": "/deleteUser/:employeeId",
-    "title": "Delete User",
+    "url": "/deleteEmployee/:employeeId",
+    "title": "Delete employee",
     "group": "User",
     "description": "<p>deletes user</p>",
     "success": {
@@ -795,21 +823,21 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "User",
-    "name": "DeleteDeleteuserEmployeeid"
+    "name": "DeleteDeleteemployeeEmployeeid"
   },
   {
     "type": "get",
-    "url": "/getDetailsForUpdate/:employeeId",
-    "title": "Populate Update Form",
+    "url": "/employee/:employeeId",
+    "title": "Get employee by id",
     "group": "User",
-    "description": "<p>this api gives data for the populating the update form</p>",
+    "description": "<p>this api gives data for showing user details by id</p>",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n      \"addressId\": 3,\n      \"street\": \"somewhere\",\n      \"city\": \"somewhere\",\n      \"province\": \"somewhere\",\n      \"country\": \"somewhere\",\n      \"zipCode\": \"55\",\n      \"addressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n     }",
+          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n       \"permaAddressId\": 25,\n       \"permaStreet\": \"somewhere\",\n       \"permaCity\": \"somewhere\",\n       \"permaProvince\": \"somewhere\",\n       \"permaCountry\": \"somewhere\",\n       \"permaZipCode\": \"55\",\n       \"permaAddressType\": \"P\",\n       \"tempAddressId\": 24,\n       \"tempStreet\": \"somewhere\",\n       \"tempCity\": \"somewhere\",\n       \"tempProvince\": \"somewhere\",\n       \"tempCountry\": \"somewhere\",\n       \"tempZipCode\": \"55\",\n       \"tempAddressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n     \"userName\": \"MRsatyam\"\n     }",
           "type": "json"
         }
       ]
@@ -834,14 +862,14 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "User",
-    "name": "GetGetdetailsforupdateEmployeeid"
+    "name": "GetEmployeeEmployeeid"
   },
   {
     "type": "get",
-    "url": "/userProfile",
-    "title": "User Profile Full",
+    "url": "/employees",
+    "title": "All employee detail",
     "group": "User",
     "description": "<p>this api gives data for admin panel data includes employee details</p>",
     "success": {
@@ -906,7 +934,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n      \"addressId\": 3,\n      \"street\": \"somewhere\",\n      \"city\": \"somewhere\",\n      \"province\": \"somewhere\",\n      \"country\": \"somewhere\",\n      \"zipCode\": \"55\",\n      \"addressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n     }",
+          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n       \"permaAddressId\": 25,\n       \"permaStreet\": \"somewhere\",\n       \"permaCity\": \"somewhere\",\n       \"permaProvince\": \"somewhere\",\n       \"permaCountry\": \"somewhere\",\n       \"permaZipCode\": \"55\",\n       \"permaAddressType\": \"P\",\n       \"tempAddressId\": 24,\n       \"tempStreet\": \"somewhere\",\n       \"tempCity\": \"somewhere\",\n       \"tempProvince\": \"somewhere\",\n       \"tempCountry\": \"somewhere\",\n       \"tempZipCode\": \"55\",\n       \"tempAddressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n       \"userName\": \"mrSatyam\"\n     }",
           "type": "json"
         }
       ]
@@ -931,53 +959,14 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "User",
-    "name": "GetUserprofile"
-  },
-  {
-    "type": "get",
-    "url": "/userProfile/:employeeId",
-    "title": "get employee detail by id",
-    "group": "User",
-    "description": "<p>this api gives data for showing user details by id</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "   {\n{\n    \"employeeId\": 3,\n   \"fullName\": \"satyam khadka\",\n      \"typeOfEmployee\": \"intern\",\n      \"gender\": \"male\",\n      \"DOB\": \"1999-10-20T18:15:00.000Z\",\n      \"phoneNumber\": \"9862679609\",\n      \"mobileNumber\": \"9815004608\",\n      \"profilePic\": \"default.png\",\n      \"officialEmail\": \"satyamkhadka@krennovatech.com\",\n      \"personalEmail\": \"satyam.khadka123@gmail.com\",\n      \"citizenshipNumber\": \"124\",\n      \"citizenshipDigitalCopy\": \"citizenDigitalCopy_1556779639937.jpg\",\n      \"addressId\": 3,\n      \"street\": \"somewhere\",\n      \"city\": \"somewhere\",\n      \"province\": \"somewhere\",\n      \"country\": \"somewhere\",\n      \"zipCode\": \"55\",\n      \"addressType\": \"T\",\n      \"professionalId\": 2,\n      \"joinDate\": \"2019-05-04T18:15:00.000Z\",\n      \"endDate\": \"0000-00-00\",\n      \"department\": \"development\",\n      \"resume\": \"resume_1556779639938.jpg\",\n      \"skill\": \"node\",\n      \"emergencyContactId\": 2,\n      \"eFullName\": \"someone\",\n      \"eMobileNo\": \"9898989898\",\n      \"email\": \"sosdlj\",\n      \"relationship\": \"relation\"\n     }",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "SQL_Error",
-            "description": "<p>sql failure</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP 500 Internal Server Error",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
-    "groupTitle": "User",
-    "name": "GetUserprofileEmployeeid"
+    "name": "GetEmployees"
   },
   {
     "type": "post",
-    "url": "/createUser",
-    "title": "Create User",
+    "url": "/createEmployee",
+    "title": "Create Employee",
     "group": "User",
     "description": "<p>This api creates new User (employee) multipart/form-data</p>",
     "parameter": {
@@ -1040,61 +1029,61 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tstreet",
+            "field": "tempStreet",
             "description": "<p>Temporary street address</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tcity",
+            "field": "tempCity",
             "description": "<p>Temporary city name</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tprovince",
+            "field": "tempProvince",
             "description": "<p>Temporary province</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tcountry",
+            "field": "tempCountry",
             "description": "<p>temporary country</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tzipCode",
+            "field": "tempZipCode",
             "description": "<p>temp zip code</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pstreet",
+            "field": "permaStreet",
             "description": "<p>permanent street address</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pcity",
+            "field": "permaCity",
             "description": "<p>permanenet city address</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pprovince",
+            "field": "permaProvince",
             "description": "<p>permanent province</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pcountry",
+            "field": "permaCountry",
             "description": "<p>permanent country</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pzipCode",
+            "field": "permaZipCode",
             "description": "<p>permanent zip code</p>"
           },
           {
@@ -1156,6 +1145,18 @@
             "optional": false,
             "field": "resume",
             "description": "<p>sent from multipart/form-data header</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>username of the employee</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "password",
+            "description": "<p>hashed password md5</p>"
           }
         ]
       }
@@ -1189,14 +1190,14 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "User",
-    "name": "PostCreateuser"
+    "name": "PostCreateemployee"
   },
   {
     "type": "put",
-    "url": "/updateUser",
-    "title": "Update User",
+    "url": "/updateEmployee",
+    "title": "Update employee",
     "group": "User",
     "description": "<p>This api updates User (employee) multipart/form-data</p>",
     "parameter": {
@@ -1265,61 +1266,61 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tstreet",
+            "field": "tempStreet",
             "description": "<p>Temporary street address</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tcity",
+            "field": "tempCity",
             "description": "<p>Temporary city name</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tprovince",
+            "field": "tempProvince",
             "description": "<p>Temporary province</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tcountry",
+            "field": "tempCountry",
             "description": "<p>temporary country</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "tzipCode",
+            "field": "tempZipCode",
             "description": "<p>temp zip code</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pstreet",
+            "field": "permaStreet",
             "description": "<p>permanent street address</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pcity",
+            "field": "permaCity",
             "description": "<p>permanenet city address</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pprovince",
+            "field": "permaProvince",
             "description": "<p>permanent province</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pcountry",
+            "field": "permaCountry",
             "description": "<p>permanent country</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "pzipCode",
+            "field": "permaZipCode",
             "description": "<p>permanent zip code</p>"
           },
           {
@@ -1414,8 +1415,8 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentationJSFiles/documentation.js",
+    "filename": "./documentation.js",
     "groupTitle": "User",
-    "name": "PutUpdateuser"
+    "name": "PutUpdateemployee"
   }
 ]
