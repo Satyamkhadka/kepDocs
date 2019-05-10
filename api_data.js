@@ -481,7 +481,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/mockLogin",
+    "url": "/login",
     "title": "Login",
     "group": "Login",
     "description": "<p>login</p>",
@@ -534,7 +534,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "./loginDoc.js",
     "groupTitle": "Login",
-    "name": "PostMocklogin"
+    "name": "PostLogin"
   },
   {
     "type": "delete",
