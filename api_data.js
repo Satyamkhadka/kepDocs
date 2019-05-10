@@ -485,11 +485,29 @@ define({ "api": [
     "title": "Login",
     "group": "Login",
     "description": "<p>login</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "userName",
+            "description": "<p>userName of the employee</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password of the employee</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "   {\n\"success\": true,\n \"message\": \"Authentication successful!\",\n \"token\": \"eyJvU0k token token example\"\n }",
+          "content": "\n{\n  \"success\": true,\n  \"message\": \"Login Successfull\",\n  \"accessLevel\": \"admin\",\n  \"token\": \"eyJhbGnomYsOESqP9yjp7lA\"\n }",
           "type": "json"
         }
       ]
@@ -508,7 +526,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "   {\n\"success\": false,\n \"message\": \"Email or password does not match.\"\n}",
+          "content": "   {\n\"success\": false,\n \"message\": \"Email or password is wrong\"\n}",
           "type": "json"
         }
       ]
