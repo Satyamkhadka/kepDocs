@@ -1,7 +1,7 @@
 [
   {
     "type": "get",
-    "url": "/employeeNamesAndId/",
+    "url": "/employees/IdAndName",
     "title": "get all employee and id",
     "group": "Attendance",
     "description": "<p>this api employee name and employee id for the dropdown menu in search</p>",
@@ -34,9 +34,9 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./attendanceDoc.js",
     "groupTitle": "Attendance",
-    "name": "GetEmployeenamesandid"
+    "name": "GetEmployeesIdandname"
   },
   {
     "success": {
@@ -137,7 +137,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./emailDocs.js",
     "groupTitle": "Email",
     "name": "PostSendmail"
   },
@@ -259,7 +259,7 @@
   },
   {
     "type": "get",
-    "url": "/populateLeaveRequests/:year/:month",
+    "url": "/LeaveRequests/:year/:month",
     "title": "Get Leave Request in a month",
     "group": "Leave",
     "description": "<p>this api gets data to populate in admin panel</p>",
@@ -292,9 +292,9 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./leaveDoc.js",
     "groupTitle": "Leave",
-    "name": "GetPopulateleaverequestsYearMonth"
+    "name": "GetLeaverequestsYearMonth"
   },
   {
     "type": "post",
@@ -328,6 +328,18 @@
             "optional": false,
             "field": "employeeId",
             "description": "<p>employee id</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "reason",
+            "description": "<p>reason of leave short description</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>amount of leave</p>"
           }
         ]
       }
@@ -361,7 +373,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./leaveDoc.js",
     "groupTitle": "Leave",
     "name": "PostCreateleaverequest"
   },
@@ -385,6 +397,12 @@
             "optional": false,
             "field": "leaveId",
             "description": "<p>leaveid of the employee</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "employeeId",
+            "description": "<p>employeeId of the employee</p>"
           }
         ]
       }
@@ -418,9 +436,48 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./leaveDoc.js",
     "groupTitle": "Leave",
     "name": "PutChangeleavestatus"
+  },
+  {
+    "type": "put",
+    "url": "/resumeLeave/:employeeId/:leaveId",
+    "title": "resume leave",
+    "group": "Leave",
+    "description": "<p>This api resumes the employees leave and sets end date to today</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQLError",
+            "description": "<p>sql failure</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 500 Internal Server Error",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./leaveDoc.js",
+    "groupTitle": "Leave",
+    "name": "PutResumeleaveEmployeeidLeaveid"
   },
   {
     "type": "post",
@@ -457,7 +514,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./loginDoc.js",
     "groupTitle": "Login",
     "name": "PostMocklogin"
   },
@@ -496,7 +553,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./noticeDoc.js",
     "groupTitle": "Notice",
     "name": "DeleteDeletenoticeId"
   },
@@ -535,7 +592,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./noticeDoc.js",
     "groupTitle": "Notice",
     "name": "GetReadnotice"
   },
@@ -592,7 +649,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./noticeDoc.js",
     "groupTitle": "Notice",
     "name": "PostCreatenotice"
   },
@@ -631,13 +688,13 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./reminderDoc.js",
     "groupTitle": "Reminder",
     "name": "DeleteDeletereminderId"
   },
   {
     "type": "get",
-    "url": "/readReminder",
+    "url": "/Reminders",
     "title": "Read Reminder",
     "group": "Reminder",
     "description": "<p>this api gets reminder</p>",
@@ -670,9 +727,9 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./reminderDoc.js",
     "groupTitle": "Reminder",
-    "name": "GetReadreminder"
+    "name": "GetReminders"
   },
   {
     "type": "post",
@@ -745,7 +802,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./reminderDoc.js",
     "groupTitle": "Reminder",
     "name": "PostCreatereminder"
   },
@@ -784,7 +841,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./userDoc.js",
     "groupTitle": "Test",
     "name": "Get"
   },
@@ -823,7 +880,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./userDoc.js",
     "groupTitle": "User",
     "name": "DeleteDeleteemployeeEmployeeid"
   },
@@ -862,7 +919,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./userDoc.js",
     "groupTitle": "User",
     "name": "GetEmployeeEmployeeid"
   },
@@ -959,7 +1016,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./userDoc.js",
     "groupTitle": "User",
     "name": "GetEmployees"
   },
@@ -1190,7 +1247,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./userDoc.js",
     "groupTitle": "User",
     "name": "PostCreateemployee"
   },
@@ -1415,7 +1472,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "./documentation.js",
+    "filename": "./userDoc.js",
     "groupTitle": "User",
     "name": "PutUpdateemployee"
   }
