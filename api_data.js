@@ -96,7 +96,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "optional": false,
-            "field": "email",
+            "field": "userName",
             "description": "<p>login email of the employee</p>"
           },
           {
