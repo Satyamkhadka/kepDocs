@@ -1,6 +1,45 @@
 [
   {
     "type": "get",
+    "url": "/employees/:employeeId/:year/:month",
+    "title": "search",
+    "group": "Attendance",
+    "description": "<p>this api searches employee employee attendance and the descriptive data</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n   \"abstractData\": {\n       \"totalAbsentDays\": 7,\n       \"totalLateDays\": 1,\n       \"totalLateHours\": 1,\n       \"totalEarlyDays\": 2,\n       \"overtimeHours\": 2\n   },\n   \"data\": [\n       {\n           \"attendanceDate\": \"1/1/2019\",\n           \"inTime\": \"09:00:00\",\n           \"outTime\": \"16:00:00\",\n           \"clockIn\": \"00:00:00\",\n           \"clockOut\": \"00:00:00\",\n           \"late\": 0,\n           \"early\": 0,\n           \"absent\": \"T\",\n           \"employeeId\": 0,\n           \"department\": \"Krennova\",\n           \"employeeNumber\": 24,\n           \"fullName\": \"Amogh Ganesh Shakya\"\n       },....\n          maybe 29-30 more\n      ]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQL_Error",
+            "description": "<p>sql failure</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 500 Internal Server Error",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./attendanceDoc.js",
+    "groupTitle": "Attendance",
+    "name": "GetEmployeesEmployeeidYearMonth"
+  },
+  {
+    "type": "get",
     "url": "/employees/IdAndName",
     "title": "get all employee and id",
     "group": "Attendance",
@@ -9,7 +48,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n      \"employeeId\": 2,\n      \"fullName\": \"satyam khadka\"\n  }",
+          "content": "{\n      \"employeeNumber\": 2,\n      \"fullName\": \"satyam khadka\"\n  }",
           "type": "json"
         }
       ]
@@ -267,16 +306,6 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP 200 OK",
-          "type": "json"
-        },
-        {
-          "title": "Success-Response:",
-          "content": "      {\n\"employeeId\": 2,\n    \"fullname\": \"satyam khadka\",\n\"leaveId\": 1,\n     \"typeOfLeave\": \"paid\",\n     \"dateRequested\": \"2019-05-01T18:15:00.000Z\",\n     \"leaveStartDate\": \"2019-05-31T18:15:00.000Z\",\n      \"leaveEndDate\": \"2019-06-04T18:15:00.000Z\",\n     \"reason\": \"i am going to be sick on these days.. \",\n      \"status\": \"pending\"\n }",
-          "type": "json"
-        },
-        {
-          "title": "Success-Response:",
           "content": "     {\n               success:'true',\n            message:'Deleted Pending Leave Request'\n}",
           "type": "json"
         }
@@ -288,28 +317,12 @@
           {
             "group": "Error 4xx",
             "optional": false,
-            "field": "SQLError",
-            "description": "<p>sql failure</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
             "field": "SQL_Error",
             "description": "<p>sql failure</p>"
           }
         ]
       },
       "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "    HTTP 500 Internal Server Error\n\n\n//get leave requests by ID\n\n/**",
-          "type": "json"
-        },
-        {
-          "title": "Error-Response:",
-          "content": "    HTTP 500 Internal Server Error\n\n\n\n\n \n//delete leave request",
-          "type": "json"
-        },
         {
           "title": "Error-Response:",
           "content": " {\n               success:'false',\n            message:'Contact Administrator'\n}",
@@ -321,6 +334,45 @@
     "filename": "./leaveDoc.js",
     "groupTitle": "Leave",
     "name": "DeleteLeaverequestsLeaveid"
+  },
+  {
+    "type": "get",
+    "url": "/LeaveRequests/:employeeId/:year/:month",
+    "title": "Get Leave Request in a month by ID",
+    "group": "Leave",
+    "description": "<p>this api gets data to populate in employee Panel</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "      {\n\"employeeId\": 2,\n    \"fullname\": \"satyam khadka\",\n\"leaveId\": 1,\n     \"typeOfLeave\": \"paid\",\n     \"dateRequested\": \"2019-05-01T18:15:00.000Z\",\n     \"leaveStartDate\": \"2019-05-31T18:15:00.000Z\",\n      \"leaveEndDate\": \"2019-06-04T18:15:00.000Z\",\n     \"reason\": \"i am going to be sick on these days.. \",\n      \"status\": \"pending\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQL_Error",
+            "description": "<p>sql failure</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 500 Internal Server Error",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./leaveDoc.js",
+    "groupTitle": "Leave",
+    "name": "GetLeaverequestsEmployeeidYearMonth"
   },
   {
     "type": "get",
@@ -504,6 +556,45 @@
     "filename": "./leaveDoc.js",
     "groupTitle": "Leave",
     "name": "PutChangeleavestatus"
+  },
+  {
+    "type": "put",
+    "url": "/resumeLeave/:employeeId/:leaveId",
+    "title": "resume leave",
+    "group": "Leave",
+    "description": "<p>This api resumes the employees leave and sets end date to today</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQLError",
+            "description": "<p>sql failure</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 500 Internal Server Error",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./leaveDoc.js",
+    "groupTitle": "Leave",
+    "name": "PutResumeleaveEmployeeidLeaveid"
   },
   {
     "type": "post",
