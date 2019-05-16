@@ -1,6 +1,45 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/",
+    "title": "test url",
+    "group": "AAATest",
+    "description": "<p>this api is just for checkings and all this api basically has no input as well as output</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP 200 OK",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UnableToConnect",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP 404 Not Found",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./userDoc.js",
+    "groupTitle": "AAATest",
+    "name": "Get"
+  },
+  {
+    "type": "get",
     "url": "/employees/:employeeId/:year/:month",
     "title": "search",
     "group": "Attendance",
@@ -76,6 +115,96 @@ define({ "api": [
     "filename": "./attendanceDoc.js",
     "groupTitle": "Attendance",
     "name": "GetEmployeesIdandname"
+  },
+  {
+    "type": "post",
+    "url": "/uploadAttendanceFromFile",
+    "title": "upload excel file",
+    "group": "Attendance",
+    "description": "<p>this api uploads excel file in the system</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "excelFile",
+            "description": "<p>excel file to be uploaded(post method multipart/formdata)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   {\n\"success\": true,\n \"message\": \"inserted 405 data rows\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQL_Error",
+            "description": "<p>sql failure,fileErrors</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "   {\n\"success\": false,\n \"message\": \"error n inserting , file already uploaded\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./attendanceDoc.js",
+    "groupTitle": "Attendance",
+    "name": "PostUploadattendancefromfile"
+  },
+  {
+    "type": "get",
+    "url": "/birthdays",
+    "title": "",
+    "group": "Birthday",
+    "description": "<p>this api gets birthdays of all employees</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n \"fullName\":\"Ashutosh Shrestha\",\n \"DOB\":\"2019-05-01\"\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "SQL_Error",
+            "description": "<p>sql failure</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n success:'false',\n message:'Error populating birthday'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./birthdayDoc.js",
+    "groupTitle": "Birthday",
+    "name": "GetBirthdays"
   },
   {
     "success": {
@@ -219,7 +348,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  'ss'='ss' \n}",
+          "content": "[\n   {\n       \"playerId\": 1,\n       \"nameOfPlayer\": \"satyam khadka\",\n       \"team\": \"B\"\n   },\n   {\n       \"playerId\": 2,\n       \"nameOfPlayer\": \"satyam khadka\",\n       \"team\": \"A\"\n   }\n]",
           "type": "json"
         }
       ]
@@ -228,7 +357,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Error-Response",
-          "content": "{\n    'success':'false',\n    'message':'Error in adding player to the team'\n}",
+          "content": "{\n    'success':'false',\n    'message':'Error'\n}",
           "type": "json"
         }
       ]
@@ -240,10 +369,34 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/addEmployee",
+    "url": "/createPlayer",
     "title": "adds member to the futsal team",
     "group": "Futsal",
     "description": "<p>this api addss member to the futsal team</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "playerId",
+            "description": "<p>player number</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of the player</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "team",
+            "description": "<p>players team (A or B)</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -265,7 +418,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "./futsalDoc.js",
     "groupTitle": "Futsal",
-    "name": "PostAddemployee"
+    "name": "PostCreateplayer"
   },
   {
     "type": "put",
@@ -940,45 +1093,6 @@ define({ "api": [
     "filename": "./reminderDoc.js",
     "groupTitle": "Reminder",
     "name": "PostCreatereminder"
-  },
-  {
-    "type": "get",
-    "url": "/",
-    "title": "test url",
-    "group": "Test",
-    "description": "<p>this api is just for checkings and all this api basically has no input as well as output</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP 200 OK",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "UnableToConnect",
-            "description": ""
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "HTTP 404 Not Found",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "./userDoc.js",
-    "groupTitle": "Test",
-    "name": "Get"
   },
   {
     "type": "delete",
